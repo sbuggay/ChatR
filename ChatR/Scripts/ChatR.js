@@ -11,6 +11,14 @@
         model.addMessage(date, userName, message);
     };
 
+    chatHub.client.registerConnect = function (date, userName) {
+        model.messages.push({"date": date ,"userName": userName, "message": userName + " has connected"})
+    };
+
+    chatHub.client.registerDisconnect = function (date, userName) {
+        model.messages.push({ "date": date, "userName": userName, "message": userName + " has connected" })
+    };
+
     var stringToColour = function (str) {
         // str to hash
         for (var i = 0, hash = 0; i < str.length; hash = str.charCodeAt(i++) + ((hash << 5) - hash));
@@ -23,6 +31,15 @@
         var self = this;
         self.message = ko.observable("");
         self.messages = ko.observableArray();
+        self.users = ko.observableArray();
+
+        this.registerConnect = function (userName) {
+
+        };
+
+        this.registerDisconnect = function (userName) {
+
+        };
 
         this.sendMessage = function () {
             var self = this;
