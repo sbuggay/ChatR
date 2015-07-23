@@ -4,6 +4,24 @@
 
 <hr />
 
+
+<div class="messages">
+    <table class="table table-striped table-bordered">
+        <tbody data-bind="foreach:messages">
+            <tr>
+                <td>
+                    <span class="date" data-bind="text: date"></span>
+                    <span data-bind="html: userName"></span>
+                    <span>:</span>
+                    <span data-bind="html: message"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
 <div class="form-group">
     <div class="input-group">
         <input type="text" class="form-control" placeholder="Message" data-bind="value:message">
@@ -12,20 +30,6 @@
         </span>
     </div>
 </div>
-
-
-<table class="table table-striped">
-    <tbody data-bind="foreach:messages">
-        <tr>
-            <td>
-                <span class="date" data-bind="text: date"></span>
-                <span data-bind="html: userName"></span>
-                <span>:</span>
-                <span data-bind="html: message"></span>
-            </td>
-        </tr>
-    </tbody>
-</table>
 
 
 @section scripts {

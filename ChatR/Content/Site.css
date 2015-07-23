@@ -9,17 +9,16 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
 .userName {
     font-weight: bold;
 }
 
 .date {
     font-weight: bold;
+}
+
+.messages {
+   overflow: hidden;
+   padding-bottom: 20px;
+   max-height:500px;
 }

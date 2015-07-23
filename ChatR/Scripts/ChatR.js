@@ -41,6 +41,9 @@
             // Replace any links with proper href tagged link
             message = message.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
 
+            // Scroll to bottom of table to focus on newest message
+            $(".messages")[0].scrollTop = $(".messages")[0].scrollHeight;
+
             self.messages.push({ "date": date, "userName": userName, "message": message });
         }
     };
